@@ -1,0 +1,33 @@
+html {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+}
+body {
+  padding: 10%;
+}
+.button {
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.87);
+  background: white;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  height: 36px;
+  padding: 0 26px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 36px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.button:hover,
+.button:active {
+  box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.12);
+}

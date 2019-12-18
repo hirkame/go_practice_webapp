@@ -32,7 +32,7 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 }
 
 func defaultHandler(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/view/default", http.StatusFound)
+	http.Redirect(w, r, "/view/Hello", http.StatusFound)
 	return
 }
 

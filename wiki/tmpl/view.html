@@ -1,5 +1,21 @@
-<h1>{{.Title}}</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+  </head>
 
-<p>[<a href="/edit/{{.Title}}">edit</a>]</p>
-
-<div>{{printf "%s" .Body}}</div>
+  <body>
+    <div class="background">
+      <!-- Print Title -->
+      <h1>{{.Title}}</h1>
+      <!-- Link the editing page -->
+      <p>
+        <a class="button" href="/edit/{{.Title}}">
+          edit
+        </a>
+      </p>
+      <!-- Print Body -->
+      <div>{{printf "%s" .Body}}</div>
+    </div>
+  </body>
+</html>
