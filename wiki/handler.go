@@ -6,12 +6,12 @@ import (
 )
 
 func (p *Page) save() error {
-	filename := p.Title + ".txt"
+	filename := "data/" + p.Title + ".txt"
 	return ioutil.WriteFile(filename, p.Body, 0600)
 }
 
 func loadPage(title string) (*Page, error) {
-	filename := title + ".txt"
+	filename := "data/" + title + ".txt"
 	body, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return nil, err
@@ -29,6 +29,11 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 		}
 		fn(w, r, m[2])
 	}
+}
+
+func defaultHandler(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "/view/default", http.StatusFound)
+	return
 }
 
 func viewHandler(w http.ResponseWriter, r *http.Request, title string) {

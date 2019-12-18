@@ -11,6 +11,7 @@ type Page struct {
 }
 
 func main() {
+	http.HandleFunc("/", defaultHandler)
 	http.HandleFunc("/view/", makeHandler(viewHandler))
 	http.HandleFunc("/edit/", makeHandler(editHandler))
 	http.HandleFunc("/save/", makeHandler(saveHandler))
